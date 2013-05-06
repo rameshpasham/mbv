@@ -1,0 +1,51 @@
+apply plugin: 'java'
+apply plugin: 'groovy'
+apply plugin: 'maven'
+group = 'com.cordys'
+version = '4.3'
+def groupId = group
+def artifactId = projectDir.name
+def versionNumber = version
+
+
+repositories {
+   mavenCentral()
+
+}
+
+dependencies{
+	compile(group: 'org.apache.ant', name: 'ant', version: '1.8.2')
+	compile gradleApi()
+	groovy localGroovy()
+}
+
+sourceSets {
+    main {
+        java {
+            srcDir 'src/java'
+        }
+    }
+	main {
+		groovy{
+			srcDir 'src/groovy'
+		}
+		resources {
+			srcDir 'src/resources'
+	    }
+		
+	}
+}
+
+uploadArchives {
+  repositories {
+      mavenRepo url: "http://buildrepos.vanenburg.com/third-party";
+	  mavenRepo url: "../libs"
+	  repositories.mavenDeployer {
+		  			repository(url: "../libs") {
+        }
+      pom.version = versionNumber
+      pom.artifactId = artifactId
+      pom.groupId = groupId
+    }
+  }
+}

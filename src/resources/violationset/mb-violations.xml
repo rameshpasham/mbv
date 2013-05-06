@@ -1,0 +1,815 @@
+<violations>
+	<violation
+		priority="1" type="MBviolation">
+		<regexp></regexp>
+		<description>MISSING DOCTYPE HTML AT STARTING</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook</suggestion>
+		<exclusionlist>
+			<exclude>library</exclude>
+		</exclusionlist>
+	</violation>
+	<violation
+		priority="2" type="MBviolation">
+		<regexp>(?&lt;!window)\.document([^\w\(]|$)</regexp>
+		<description>.document</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-ownerDocumentisodocument</suggestion>
+		<exceptions>
+			<regexp>"\S*\.document\S*"</regexp>
+			<regexp>\&gt;\S*\.document\S*\&lt;</regexp>
+			<vtext>prototype.document</vtext>
+		</exceptions>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<regexp>\.parentWindow([^\w\(]|$)</regexp>
+		<description>.parentWindow</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-defaultViewisoparentWindow</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<regexp>.*createElement\s*\(\s*"\s*&lt;.*&gt;.*</regexp>
+		<description>createElement with HTML markup</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-document.createElement()</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<regexp>\.insertBefore\s*\([^,]*\)\s*;*\s*$</regexp>
+		<description>.insertBefore missing param</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-parentElement.insertBefore(newChild,beforeChild)</suggestion>
+	</violation>
+	<violation
+		priority="2" type="MBviolation">
+		<vtext>window[</vtext>
+		<description>.window[</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-document.all%5CPDi%3A%22id%22%5C%2Fwindow%5CPDi%3A%22id%22%5C</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<regexp>\.all([^\w\(]|$)</regexp>
+		<description>.all</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-document.all%5CPDi%3A%22id%22%5C%2Fwindow%5CPDi%3A%22id%22%5C</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<vtext>eibus:</vtext>
+		<description>eibus:</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-%3Ceibus%3A..%3Eelement</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<regexp>&lt;html.*\s(onselect|onSelect).*&gt;</regexp>
+		<description>html onselect</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-onapplicationselectisoonselect</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<regexp>\.application\.addListener\s*\(\s*"\s*(onselect|onSelect)\s*"</regexp>
+		<description>html onselect</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-onapplicationselectisoonselect</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<regexp>\.children([^\w\(]|$)</regexp>
+		<description>.children</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-childNodesisochildren</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<regexp>\.parentElement([^\w\(]|$)</regexp>
+		<description>.parentElement</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-parentNodeisoparentElement</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<regexp>\.outerHTML([^\w\(]|$)</regexp>
+		<description>.outerHTML</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-outerHTML</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<regexp>^\s*function\s+\w+\.</regexp>
+		<description>Wrong function declaration</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-Functions</suggestion>
+	</violation>
+	<violation
+		priority="1"
+		filetypes="htm,html" type="MBviolation">
+		<regexp>(?!&lt;(script|SCRIPT)[^&gt;]*\stype[^=&gt;]*=[^>]*&gt;)(&lt;(script|SCRIPT)\W.*>|&lt;(script|SCRIPT)>)
+		</regexp>
+		<description>Type attribute required</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-Propertypeattributerequired</suggestion>
+	</violation>
+	<violation
+		priority="1"
+		filetypes="htm,html" type="MBviolation">
+		<regexp>(?!&lt;(style|STYLE)[^&gt;]*\stype[^=&gt;]*=[^>]*&gt;)(&lt;(style|STYLE)\W.*>|&lt;(style|STYLE)>)</regexp>
+		<description>Type attribute required</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-Propertypeattributerequired</suggestion>
+	</violation>
+	<violation
+		priority="1"
+		filetypes="htm,html" type="MBviolation">
+		<regexp>(?!&lt;(link|LINK)[^&gt;]*\stype[^=&gt;]*=[^>]*&gt;)(&lt;(link|LINK)\W.*>|&lt;(link|LINK)>)</regexp>
+		<description>Type attribute required</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-Propertypeattributerequired</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<vtext>.rows(</vtext>
+		<description>.rows(</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-Tablerowsandcells</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<vtext>.cells(</vtext>
+		<description>.cells(</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-Tablerowsandcells</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<regexp>\.insertRow\(\s*\)</regexp>
+		<description>.insertRow()</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-Tablerowsandcells</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<regexp>\.insertCell\(\s*\)</regexp>
+		<description>.insertCell()</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-Tablerowsandcells</suggestion>
+	</violation>
+	<violation
+		priority="2" type="MBviolation">
+		<vtext>window.event</vtext>
+		<description>window.event</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-EventModelandtheusageofwindow.event</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<regexp>\.attachEvent\s*\(</regexp>
+		<description>.attachEvent(</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-OverviewofavailablemultibrowserWrapperfunctions</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<regexp>\.detachEvent\s*\(</regexp>
+		<description>.detachEvent(</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-OverviewofavailablemultibrowserWrapperfunctions</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<regexp>onpropertychange([^\w\(]|$)</regexp>
+		<description>onpropertychange</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-Onpropertychange</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<vtext>dataTransfer.getData</vtext>
+		<description>dataTransfer.getData</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-DragAndDropandDataTransfer</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<vtext>dataTransfer.setData</vtext>
+		<description>dataTransfer.setData</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-DragAndDropandDataTransfer</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<regexp>cordys.dataTransferGetData\s*\(.*\"text\".*\)</regexp>
+		<description>datatype text</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-DragAndDropandDataTransfer</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<regexp>cordys.dataTransferSetData\s*\(.*\"text\".*\)</regexp>
+		<description>datatype text</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-DragAndDropandDataTransfer</suggestion>
+	</violation>
+	<violation
+		priority="1"
+		filetypes="htm,html" type="MBviolation">
+		<regexp>&lt;xml.*id\s*=.*&gt;</regexp>
+		<description>xml element with id</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-XMLDataislandlocatedinHEAD</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<regexp>\.xml([^\w\(]|$)</regexp>
+		<description>.xml</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-Usageof.documentElementand.xmlproperties</suggestion>
+		<exceptions>
+			<regexp>"\S*\.xml\S*"</regexp>
+			<regexp>\&gt;\S*\.xml\S*\&lt;</regexp>
+		</exceptions>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<regexp>\.load\s*\(\s*".*"\s*\)</regexp>
+		<description>.load(url)</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-XMLDocumumentloadfromURL</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<regexp>\.loadXML\s*\(</regexp>
+		<description>.loadXML(</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-XMLDocumentCreation</suggestion>
+	</violation>
+	<violation
+		priority="2" type="MBviolation">
+		<regexp>.*(?&lt;!documentElement)\.cloneNode\s*\(.*</regexp>
+		<description>.cloneNode(</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-document.cloneNode();</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<regexp>\.baseName([^\w\(]|$)</regexp>
+		<description>baseName</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-baseName</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<regexp>\.localName([^\w\(]|$)</regexp>
+		<description>localName</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-baseName</suggestion>
+	</violation>
+	<violation
+		priority="2" type="MBviolation">
+		<regexp>\.appendChild\s*\(</regexp>
+		<description>.appendChild(</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-appendChild%28%29%2FreplaceChild%28%29</suggestion>
+	</violation>
+	<violation
+		priority="2" type="MBviolation">
+		<regexp>\.replaceChild\s*\(</regexp>
+		<description>.replaceChild(</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-appendChild%28%29%2FreplaceChild%28%29</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<regexp>\.selectSingleNode\s*\(</regexp>
+		<description>.selectSingleNode(</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-selectSingleNode()andselectNodes()</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<regexp>\.selectNodes\s*\(</regexp>
+		<description>.selectNodes(</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-selectSingleNode()andselectNodes()</suggestion>
+	</violation>
+	<violation
+		priority="2" type="MBviolation">
+		<regexp>\.nextNode\s*\(</regexp>
+		<description>.nextNode(</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-selectSingleNode()andselectNodes()</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<regexp>(?&lt;!cordys)\.insertAdjacentHTML\s*\(</regexp>
+		<description>.insertAdjacentHTML(</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-OverviewofavailablemultibrowserWrapperfunctions</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<regexp>\.insertAdjacentElement\s*\(</regexp>
+		<description>.insertAdjacentElement(</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-OverviewofavailablemultibrowserWrapperfunctions</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<regexp>\.setCapture\s*\(</regexp>
+		<description>.setCapture(</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-OverviewofavailablemultibrowserWrapperfunctions</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<regexp>\.releaseCapture\s*\(</regexp>
+		<description>.releaseCapture(</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-OverviewofavailablemultibrowserWrapperfunctions</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<regexp>\.setActive\s*\(</regexp>
+		<description>.setActive(</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-onactivate%2CsetActive%28%29</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<regexp>\.onactivate([^\w\(]|$)</regexp>
+		<description>onactivate</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-onactivate%2CsetActive%28%29</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<regexp>\.cancelBubble([^\w\(]|$)</regexp>
+		<description>.cancelBubble</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-OverviewofavailablemultibrowserWrapperfunctions</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<regexp>\.scopeName([^\w\(]|$)</regexp>
+		<description>.scopeName</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-OverviewofavailablemultibrowserWrapperfunctions</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<regexp>\.text([^\w\(]|$)</regexp>
+		<description>.text</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-OverviewofavailablemultibrowserWrapperfunctions</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<regexp>\.innerText([^\w\(]|$)</regexp>
+		<description>.innerText</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-OverviewofavailablemultibrowserWrapperfunctions</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<regexp>\.createNode\s*\(</regexp>
+		<description>.createNode(</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-OverviewofavailablemultibrowserWrapperfunctions</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<regexp>\.currentStyle([^\w\(]|$)</regexp>
+		<description>.currentStyle</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-OverviewofavailablemultibrowserWrapperfunctions</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<vtext>XMLHttpRequest</vtext>
+		<description>XMLHttpRequest</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-OverviewofavailablemultibrowserWrapperfunctions</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<regexp>\.setProperty\s*\(\s*"SelectionNamespaces"</regexp>
+		<description>SelectionNamespaces</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-OverviewofavailablemultibrowserWrapperfunctions</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<regexp>\.getProperty\s*\(\s*"SelectionNamespaces"</regexp>
+		<description>SelectionNamespaces</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-OverviewofavailablemultibrowserWrapperfunctions</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<regexp>\.transformNode\s*\(</regexp>
+		<description>.transformNode(</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-OverviewofavailablemultibrowserWrapperfunctions</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<regexp>\.parsed([^\w\(]|$)</regexp>
+		<description>.parsed</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-OverviewofavailablemultibrowserWrapperfunctions</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<regexp>\.pixelLeft([^\w\(]|$)</regexp>
+		<description>.pixelLeft</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-OverviewofavailablemultibrowserWrapperfunctions</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<regexp>\.pixelTop([^\w\(]|$)</regexp>
+		<description>.pixelTop</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-OverviewofavailablemultibrowserWrapperfunctions</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<regexp>\.pixelRight([^\w\(]|$)</regexp>
+		<description>.pixelRight</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-OverviewofavailablemultibrowserWrapperfunctions</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<regexp>\.pixelBottom([^\w\(]|$)</regexp>
+		<description>.pixelBottom</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-OverviewofavailablemultibrowserWrapperfunctions</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<vtext>ActiveXObject</vtext>
+		<description>ActiveXObject</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-Microsoft.XMLHTTPXMLHttpRequest</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<regexp>xformsversion\s*=\s*"\s*1\s*"</regexp>
+		<description>xformsversion="1"</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<regexp>\.offset(X|Y)([^\w\(]|$)</regexp>
+		<description>.offset</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-EventProperties</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<regexp>\.wheelDelta([^\w\(]|$)</regexp>
+		<description>.wheelDelta</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-EventProperties</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<regexp>\.detail([^\w\(]|$)</regexp>
+		<description>.detail</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-EventProperties</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<regexp>\.layer(X|Y)([^\w\(]|$)</regexp>
+		<description>.layer</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-EventProperties</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<regexp>\.page(X|Y)([^\w\(]|$)</regexp>
+		<description>.page</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-EventProperties</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<regexp>\.(x|y)([^\w\(]|$)</regexp>
+		<description>.x or .y</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-EventProperties</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<regexp>\.target([^\w\(]|$)</regexp>
+		<description>.target</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-EventProperties</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<regexp>\.currentTarget([^\w\(]|$)</regexp>
+		<description>.currentTarget</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-EventProperties</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<regexp>\.explicitOriginalTarget([^\w\(]|$)</regexp>
+		<description>.explicitOriginalTarget</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-EventProperties</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<regexp>\.originalTarget([^\w\(]|$)</regexp>
+		<description>.originalTarget</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-EventProperties</suggestion>
+	</violation>
+	<violation
+		priority="2" type="MBviolation">
+		<vtext>/cordys/wcp/style</vtext>
+		<description>style => theme</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook</suggestion>
+	</violation>
+	<violation
+		priority="2" type="MBviolation">
+		<regexp>\.execCommand\s*\(\s*"SaveAs"\s*\)</regexp>
+		<description>.execCommand("SaveAs")</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<regexp>\.toElement([^\w\(]|$)</regexp>
+		<description>.toElement</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-OverviewofavailablemultibrowserWrapperfunctions</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<regexp>\.fromElement([^\w\(]|$)</regexp>
+		<description>.fromElement</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-OverviewofavailablemultibrowserWrapperfunctions</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<regexp>\.onhelp([^\w\(]|$)</regexp>
+		<description>.onhelp</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-Onhelp</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<regexp>\.nodeTypedValue([^\w\(]|$)</regexp>
+		<description>.nodeTypedValue</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-nodeTypedValue</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<regexp>\.nodeTypeString([^\w\(]|$)</regexp>
+		<description>.nodeTypeString</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-nodeTypeString</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<regexp>(?&lt;!s\(\))\.contains\s*\(</regexp>
+		<description>contains()</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-contains%28%29</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<regexp>\.repeat([^\w\(]|$)</regexp>
+		<description>.repeat</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-.repeat</suggestion>
+	</violation>
+	<violation
+		priority="2" type="MBviolation">
+		<regexp>\.style\.(top|bottom|left|right|height|width|fontSize|margin|position|padding)\s*=\s*"?\d+(\.\d+)?[^\w%\d\.]</regexp>
+		<description>style without unit</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook</suggestion>
+	</violation>
+	<violation
+		priority="2" type="MBviolation">
+		<regexp>style\s*=\s*".*(top|bottom|left|right|height|width|fontSize|margin|position|padding)\s*:\s*\d+(\.\d+)?[^\w%\d\.]</regexp>
+		<description>style without unit</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<regexp>\.style\.pos(Left|Right|Top|Bottom|Width|Height)([^\w\(]|$)</regexp>
+		<description>.pos...</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook</suggestion>
+	</violation>
+	<violation
+		priority="1" type="MBviolation">
+		<regexp>\.style\.pixel(Left|Right|Top|Bottom|Width|Height)([^\w\(]|$)</regexp>
+		<description>.pixel...</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook</suggestion>
+	</violation>
+	<violation
+		priority="3" type="SCASviolation">
+		<vtext>xmlns:eibus</vtext>
+		<description>xmlns:eibus</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-DOCTYPE</suggestion>
+	</violation>
+	<violation
+		priority="2" type="SCASviolation">
+		<regexp>\.frameElement([^\w\(]|$)</regexp>
+		<description>.frameElement</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-frameElement</suggestion>
+	</violation>
+	<violation
+		priority="3" type="SCASviolation">
+		<regexp>&lt;script.*language</regexp>
+		<description>language attribute deprecated</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-Propertypeattributerequired</suggestion>
+	</violation>
+	<violation
+		priority="2" type="SCASviolation">
+		<vtext>.eval(</vtext>
+		<description>.eval(</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-usageofeval()</suggestion>
+	</violation>
+	<violation
+		priority="2" type="SCASviolation">
+		<regexp>onclick\s*=\s*".*\(\s*\)\s*"</regexp>
+		<description>onclick without 'event' param</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-EventModelandtheusageofwindow.event</suggestion>
+	</violation>
+	<violation
+		priority="2" type="SCASviolation">
+		<regexp>(?&lt;!XMLDocument)\.documentElement([^\w\(]|$)</regexp>
+		<description>.documentElement</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-Usageof.documentElementand.xmlproperties</suggestion>
+		<exceptions>
+			<regexp>cordys.loadXMLDocument\s*\(.*\).documentElement([^\w\(]|$)</regexp>
+			<regexp>cordys.cloneXMLDocument\s*\(.*\).documentElement([^\w\(]|$)</regexp>
+		</exceptions>
+	</violation>
+	<violation
+		priority="2" type="SCASviolation">
+		<vtext>.async</vtext>
+		<description>.async</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-XMLDocumumentloadfromURL</suggestion>
+	</violation>
+	<violation
+		priority="2" type="SCASviolation">
+		<regexp>\.srcElement([^\w\(]|$)</regexp>
+		<description>.srcElement</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-OverviewofavailablemultibrowserWrapperfunctions</suggestion>
+	</violation>
+	<violation
+		priority="2" type="SCASviolation">
+		<regexp>\.returnValue([^\w\(]|$)</regexp>
+		<description>.returnValue</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-OverviewofavailablemultibrowserWrapperfunctions</suggestion>
+	</violation>
+	<violation
+		priority="2" type="SCASviolation">
+		<regexp>\.setAttribute\s*\(</regexp>
+		<description>.setAttribute(</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-OverviewofavailablemultibrowserWrapperfunctions</suggestion>
+		<exceptions>
+			<regexp>\.setAttribute\s*\(\s*"\w+"\s*,\s*"?[^,\(]+"?\s*\)</regexp>
+		</exceptions>
+	</violation>
+	<violation
+		priority="1" type="SCASviolation">
+		<regexp>(^|\W)debugger;([^\w\(]|$)</regexp>
+		<description>debugger</description>
+		<suggestion></suggestion>
+	</violation>
+	<violation
+		priority="3" type="SCASviolation">
+		<vtext>local-name()</vtext>
+		<description>local-name()</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-EventProperties</suggestion>
+	</violation>
+	<violation
+		priority="3" type="SCASviolation">
+		<vtext>/cordys/wcp/images</vtext>
+		<description>images => theme</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook</suggestion>
+	</violation>
+	<violation
+		priority="3" type="SCASviolation">
+		<vtext>/cordys/wcp/icons</vtext>
+		<description>icons => theme</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook</suggestion>
+	</violation>
+	<violation
+		priority="2" type="SCASviolation">
+		<regexp>\.prefix([^\w\(]|$)</regexp>
+		<description>.prefix</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-OverviewofavailablemultibrowserWrapperfunctions</suggestion>
+	</violation>
+	<violation
+		priority="3" type="SCASviolation">
+		<regexp>\.value([^\w\(]|$)</regexp>
+		<description>.value</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook#CordysMultiBrowserSupport-Cookbook-.value</suggestion>
+	</violation>
+	<violation
+		priority="2"
+		filetypes="cws,caf" type="SCASviolation">
+		<regexp>wcpforms:size.*\d+(\.\d+)?[^\w%\d\.]</regexp>
+		<description>size without unit</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook</suggestion>
+	</violation>
+	<violation
+		priority="2"
+		filetypes="cws,caf" type="SCASviolation">
+		<regexp>wcpforms:position.*\d+(\.\d+)?[^\w%\d\.]</regexp>
+		<description>position without unit</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook</suggestion>
+	</violation>
+	<violation
+		priority="2"
+		filetypes="cws,caf" type="SCASviolation">
+		<regexp>wcpforms:anchors.*\d+(\.\d+)?[^\w%\d\.]</regexp>
+		<description>anchors without unit</description>
+		<suggestion>https://wiki.cordys.com/display/DUI/Cordys+Multi+Browser+Support+-+Cookbook</suggestion>
+	</violation>
+	<violation
+		priority="1" type="Formatviolation">
+		<vtext>wcpforms:locale=</vtext>
+		<description>locale set explicitly</description>
+		<suggestion>https://wiki.cordys.com/display/PDi/User+Preferences+set+must+reflect+in+BOP+UIs#UserPreferencessetmustreflectinBOPUIs-Solutiondetails</suggestion>
+	</violation>
+	<violation
+		priority="1" type="Formatviolation">
+		<vtext>wcpforms:timeZone=</vtext>
+		<description>timezone set explicitly</description>
+		<suggestion>https://wiki.cordys.com/display/PDi/User+Preferences+set+must+reflect+in+BOP+UIs#UserPreferencessetmustreflectinBOPUIs-Solutiondetails</suggestion>
+	</violation>
+	<violation
+		priority="1" type="Formatviolation">
+		<vtext>wcpforms:currency=</vtext>
+		<description>Currency set explicitly</description>
+		<suggestion>https://wiki.cordys.com/display/PDi/User+Preferences+set+must+reflect+in+BOP+UIs#UserPreferencessetmustreflectinBOPUIs-Solutiondetails</suggestion>
+	</violation>
+	<violation
+		priority="1" type="Formatviolation">
+		<regexp>wcpforms:displayformat=(?!("####"|"#,###.00"|"\$ #,###.00"|"shortdate"|"shortdate shorttime"|"shortdate longtime"|"longdate"|"longdate shorttime"|"longdate longtime"|"longtime"|"shorttime"|"text"|"mail"|"creditcard"|""))</regexp>
+		<description>Custom display format used</description>
+		<suggestion>https://wiki.cordys.com/display/PDi/User+Preferences+set+must+reflect+in+BOP+UIs#UserPreferencessetmustreflectinBOPUIs-Solutiondetails</suggestion>
+	</violation>
+	<violation
+		priority="1" type="Formatviolation">
+		<regexp>\.setLocale\s*\(</regexp>
+		<description>setLocale()</description>
+		<suggestion>https://wiki.cordys.com/display/PDi/User+Preferences+set+must+reflect+in+BOP+UIs#UserPreferencessetmustreflectinBOPUIs-Solutiondetails</suggestion>
+	</violation>
+	<violation
+		priority="1" type="Formatviolation">
+		<regexp>\.setTimezone\s*\(</regexp>
+		<description>setTimezone()</description>
+		<suggestion>https://wiki.cordys.com/display/PDi/User+Preferences+set+must+reflect+in+BOP+UIs#UserPreferencessetmustreflectinBOPUIs-Solutiondetails</suggestion>
+	</violation>
+	<violation
+		priority="1" type="Formatviolation">
+		<regexp>\.setCurrency\s*\(</regexp>
+		<description>setCurrency()</description>
+		<suggestion>https://wiki.cordys.com/display/PDi/User+Preferences+set+must+reflect+in+BOP+UIs#UserPreferencessetmustreflectinBOPUIs-Solutiondetails</suggestion>
+	</violation>
+	<violation
+		priority="2" type="Formatviolation">
+		<regexp>\.setDisplayFormat\s*\(</regexp>
+		<description>Check whether passing Predefined format or not to setDisplayFormat()</description>
+		<suggestion>https://wiki.cordys.com/display/PDi/User+Preferences+set+must+reflect+in+BOP+UIs#UserPreferencessetmustreflectinBOPUIs-Solutiondetails</suggestion>
+	</violation>
+	<violation
+		priority="1" type="i18nViolation">
+		<regexp>(\.caption\s*\()(\s*)([\"\'](\s*\w+)+)</regexp>
+		<description>.caption</description>
+		<suggestion>https://wiki.cordys.com/display/PDi/Cordys+BOP-4+Platform+Translation+Cookbook</suggestion>
+	</violation>
+	<violation
+		priority="1" type="i18nViolation">
+		<regexp>(\.description\s*\()(\s*)([\"\'](\s*\w+)+)</regexp>
+		<description>.description</description>
+		<suggestion>https://wiki.cordys.com/display/PDi/Cordys+BOP-4+Platform+Translation+Cookbook</suggestion>
+	</violation>
+	<violation
+		priority="1" type="i18nViolation">
+		<regexp>(\.title\s*\()(\s*)([\"\'](\s*\w+)+)</regexp>
+		<description>.title</description>
+		<suggestion>https://wiki.cordys.com/display/PDi/Cordys+BOP-4+Platform+Translation+Cookbook</suggestion>
+	</violation>
+	<violation
+		priority="1" type="i18nViolation">
+		<regexp>(\.title\s*\=)(\s*)([\"\'](\s*\w+)+)</regexp>
+		<description>.title</description>
+		<suggestion>https://wiki.cordys.com/display/PDi/Cordys+BOP-4+Platform+Translation+Cookbook</suggestion>
+	</violation>
+	<violation
+		priority="1" type="i18nViolation">
+		<regexp>(\.setLabel\s*\()(\s*)([\"\'](\s*\w+)+)</regexp>
+		<description>.setLabel</description>
+		<suggestion>https://wiki.cordys.com/display/PDi/Cordys+BOP-4+Platform+Translation+Cookbook</suggestion>
+	</violation>
+	<violation
+		priority="1" type="i18nViolation">
+		<regexp>(\.setTitle\s*\()(\s*)([\"\'](\s*\w+)+)</regexp>
+		<description>.setTitle</description>
+		<suggestion>https://wiki.cordys.com/display/PDi/Cordys+BOP-4+Platform+Translation+Cookbook</suggestion>
+	</violation>
+	<violation
+		priority="1" type="i18nViolation">
+		<regexp>(\.confirm\s*\()(\s*)([\"\'](\s*\w+)+)</regexp>
+		<description>.confirm</description>
+		<suggestion>https://wiki.cordys.com/display/PDi/Cordys+BOP-4+Platform+Translation+Cookbook</suggestion>
+	</violation>
+	<violation
+		priority="1" type="i18nViolation">
+		<regexp>(\.inform\s*\()(\s*)([\"\'](\s*\w+)+)</regexp>
+		<description>.inform</description>
+		<suggestion>https://wiki.cordys.com/display/PDi/Cordys+BOP-4+Platform+Translation+Cookbook</suggestion>
+	</violation>
+	<violation
+		priority="1" type="i18nViolation">
+		<regexp>(\.log\s*\()(\s*)(["']*[^,]*?\,)(\s*)(["'])</regexp>
+		<description>.log</description>
+		<suggestion>https://wiki.cordys.com/display/PDi/Cordys+BOP-4+Platform+Translation+Cookbook</suggestion>
+	</violation>
+	<violation
+		priority="1" type="i18nViolation">
+		<regexp>(\.notify\s*\()(\s*)([\"\'](\s*\w+)+)</regexp>
+		<description>.notify</description>
+		<suggestion>https://wiki.cordys.com/display/PDi/Cordys+BOP-4+Platform+Translation+Cookbook</suggestion>
+	</violation>
+	<violation
+		priority="1" type="i18nViolation">
+		<regexp>(\.prompt\s*\()(\s*)([\"\'](\s*\w+)+)</regexp>
+		<description>.prompt</description>
+		<suggestion>https://wiki.cordys.com/display/PDi/Cordys+BOP-4+Platform+Translation+Cookbook</suggestion>
+	</violation>
+	<violation
+		priority="1" type="i18nViolation">
+		<regexp>(\.setDialogTitle\s*\()(\s*)([\"\'](\s*\w+)+)</regexp>
+		<description>.setDialogTitle</description>
+		<suggestion>https://wiki.cordys.com/display/PDi/Cordys+BOP-4+Platform+Translation+Cookbook</suggestion>
+	</violation>
+	<violation
+		priority="1" type="i18nViolation">
+		<regexp>(\.setStatus\s*\()(\s*)([\"\'](\s*\w+)+)</regexp>
+		<description>.setStatus</description>
+		<suggestion>https://wiki.cordys.com/display/PDi/Cordys+BOP-4+Platform+Translation+Cookbook</suggestion>
+	</violation>
+	<violation
+		priority="1" type="i18nViolation">
+		<regexp>(\.showError\s*\()(\s*)([\"\'](\s*\w+)+)</regexp>
+		<description>.showError</description>
+		<suggestion>https://wiki.cordys.com/display/PDi/Cordys+BOP-4+Platform+Translation+Cookbook</suggestion>
+	</violation>
+	<violation
+		priority="1" type="i18nViolation">
+		<regexp>(WebForm\.doShowError\s*\()(\s*)(["']*[^,]*?\,)(\s*)(["'])</regexp>
+		<description>.doShowError</description>
+		<suggestion>https://wiki.cordys.com/display/PDi/Cordys+BOP-4+Platform+Translation+Cookbook</suggestion>
+	</violation>	
+	<violation
+		priority="1" type="i18nViolation">
+		<regexp>(WebForm\.doNotify\s*\()(\s*)(["']*[^,]*?\,)(\s*)(["'])</regexp>
+		<description>.doNotify</description>
+		<suggestion>https://wiki.cordys.com/display/PDi/Cordys+BOP-4+Platform+Translation+Cookbook</suggestion>
+	</violation>
+	<violation
+		priority="1" type="i18nViolation">
+		<regexp>(\.openZoom\s*\()(\s*)(["']*[^,]*?\,)(\s*)(["']*[^,]*?\,)(\s*)(["'])</regexp>
+		<description>.openZoom</description>
+		<suggestion>https://wiki.cordys.com/display/PDi/Cordys+BOP-4+Platform+Translation+Cookbook</suggestion>
+	</violation>
+</violations>
