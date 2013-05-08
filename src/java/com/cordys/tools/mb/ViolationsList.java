@@ -41,11 +41,11 @@ public class ViolationsList
 	 * @throws SAXException
 	 * @throws IOException
 	 */
-	public static List<Violation> getViolations(String violationsFilePath) throws ParserConfigurationException, SAXException, IOException
+	public static List<Violation> getViolations(File violationsFilePath) throws ParserConfigurationException, SAXException, IOException
 	{
 		List<Violation> violations = new ArrayList<Violation>();
 		DocumentBuilder docBuilder = dbf.newDocumentBuilder();
-		Document doc  = docBuilder.parse(new File(violationsFilePath));
+		Document doc  = docBuilder.parse(violationsFilePath);
 		NodeList violationsNodeList = doc.getElementsByTagName("violation");
 		int noOfNodes = violationsNodeList.getLength();
 		for (int i=0;i<noOfNodes;i++) 

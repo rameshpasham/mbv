@@ -1,5 +1,6 @@
 package com.cordys.tools.mb;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
@@ -23,7 +24,7 @@ public class ReportGenerator
 	private static final DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 	private final Map<String,Element> folderElements = new HashMap<String, Element>();
 	
-	public void generateReport(List<FileViolations> mbViolationsByFile,String outputFilePath) throws ParserConfigurationException, IOException, TransformerFactoryConfigurationError, TransformerException
+	public void generateReport(List<FileViolations> mbViolationsByFile,File outFile) throws ParserConfigurationException, IOException, TransformerFactoryConfigurationError, TransformerException
 	{
 		// Generating violations report
 		DocumentBuilder docBuilder = dbf.newDocumentBuilder();
@@ -99,6 +100,6 @@ public class ReportGenerator
 		}
 		
 		//Writing to file system
-		FileSystemUtils.writeXmlFile(rootElement, outputFilePath);
+		FileSystemUtils.writeXmlFile(rootElement, outFile);
 	}
 }

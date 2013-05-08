@@ -90,18 +90,18 @@ public class FileSystemUtils
 	 * writes the document element to xml file
 	 * 
 	 * @param element
-	 * @param filepath
+	 * @param file
 	 * @throws IOException 
 	 * @throws TransformerFactoryConfigurationError 
 	 * @throws TransformerException 
 	 */
-	public static void writeXmlFile( Element element, String filepath) throws IOException, TransformerFactoryConfigurationError, TransformerException  {
+	public static void writeXmlFile( Element element, File file) throws IOException, TransformerFactoryConfigurationError, TransformerException  {
 
 		// Prepare the DOM document for writing
 		Source source = new DOMSource(element);
 
 		// Prepare the output file
-		File file = new File(filepath);
+		
 		if( !file.exists() )
 			file.createNewFile();
 		//doubt give to developer the output folder location not file name... ***

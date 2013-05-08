@@ -38,7 +38,7 @@ public class CordysMBViolationsDetector
 		ignoreMarker = ignore;
 	}
 
-	public void generateViolationsReport(String violationsFilePath, Set<File> files, String outputFilePath)
+	public void generateViolationsReport(File violationsFilePath, Set<File> files, File outFile)
 	        throws Exception
 	{
 		// Reading the violations from file
@@ -50,10 +50,10 @@ public class CordysMBViolationsDetector
 		}
 
 		ReportGenerator reportGenerator = new ReportGenerator();
-		reportGenerator.generateReport(mbViolationsByFile, outputFilePath);
+		reportGenerator.generateReport(mbViolationsByFile, outFile);
 	}
 
-	public void generateViolationsReport(String violationsFilePath, String srcFolderPath, String outputFilePath)
+	public void generateViolationsReport(File violationsFilePath, String srcFolderPath, File outFile)
 	        throws Exception
 	{
 		//Reading the violations from file
@@ -67,7 +67,7 @@ public class CordysMBViolationsDetector
 		}
 
 		ReportGenerator reportGenerator = new ReportGenerator();
-		reportGenerator.generateReport(mbViolationsByFile, outputFilePath);
+		reportGenerator.generateReport(mbViolationsByFile, outFile);
 	}
 
 private void findViolationsInFile(File file) throws IOException
@@ -220,7 +220,7 @@ private void findViolationsInFile(File file) throws IOException
 		fileViolations.addViolation(reportViolationDOC);
 	}
 	
-	public static void main(String[] args) throws Exception
+	/*public static void main(String[] args) throws Exception
 	{
 		if( args.length < 3 )
 		{
@@ -241,5 +241,5 @@ private void findViolationsInFile(File file) throws IOException
 		mbDetector.setFilenameFilter(fileFilter);
 		mbDetector.generateViolationsReport(args[0],args[1],args[2]);
 		System.out.println("done.");
-	}
+	}*/
 }
