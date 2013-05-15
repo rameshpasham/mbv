@@ -1,7 +1,6 @@
 package com.cordys.tools.mb;
 
 import java.io.File;
-import java.io.FilenameFilter;
 import java.util.ArrayList;
 import java.util.List;
 

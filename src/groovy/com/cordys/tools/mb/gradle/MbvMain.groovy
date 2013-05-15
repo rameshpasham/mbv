@@ -14,7 +14,8 @@ import com.cordys.tools.mb.WebFileFilter
 
 class MbvMain extends DefaultTask{
 	
-	FileTree srcFolder 
+
+	FileTree srcFolder
 	File outFile
 	File violationsFile
 	boolean  ignoreMarker 

@@ -1,7 +1,11 @@
 package com.cordys.tools.mb.gradle
 
 import org.gradle.api.*
-
+import org.gradle.testfixtures.ProjectBuilder;
+/*  It is the starting point of gradle custom plugin.
+ *  We should say that this class is implementation class in META-INF/gradle-plugin/mbv.properties for gradle detecting.
+ *  In apply method, we can add our own tasks to the plugin.
+ */
 
 class MbvPlugin implements Plugin<Project> {
 
@@ -10,9 +14,11 @@ class MbvPlugin implements Plugin<Project> {
 	@Override
 	public void apply(Project project)  {
 
-       extention = project.extensions.create('mbv', MbvPluginExtention, project)
+        extention = project.extensions.create('mbv', MbvPluginExtention, project)
+                  
+		
 		/* TODO: removing duplication extention multiple times */ 
-
+		
 		project.task('mbvMain', type :MbvMain).with {
 			srcFolder = extention.srcFolder
 			showLines = extention.showLines
@@ -34,8 +40,16 @@ class MbvPlugin implements Plugin<Project> {
 			outputFile = project.file("build/reports/mbv/main.html")
 		}
 		
-	
+		
 	}
+	
+	/*static main(args){
+		      final Project project = ProjectBuilder.builder().build()
+			  project.apply(plugin : MbvPlugin)
+			  project.tasks.findByName("mbvMain").getActions().execute()
+			  
+	}*/
+	
 }
 
 
